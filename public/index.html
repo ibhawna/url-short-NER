@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url shortner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- <header>
+        <img class="logo" src="https://i.imgur.com/qXe7lWg.png">
+    </header> -->
+    <h1>
+        WELCOME TO URL SHORTENER
+    </h1>
+    <main id="app">
+        <form class="form" v-if="formVisible" @submit.prevent="createUrl()">
+            <div v-if="error" class="error">
+                {{error}}
+            </div>
+            <input class="text" type="text" v-model="url" name="url" id="url" placeholder="enter a url">
+            <input class="text" type="text" v-model="slug" name="slug" id="slug" placeholder="enter a slug">
+            <button type="submit" class="create">Create URL Shortener</button>
+        </form>
+        <div v-if="created">
+            <p class="created">Here is your short URL <a :href="created">{{created}}</a></p>
+        </div>
+    </main>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
